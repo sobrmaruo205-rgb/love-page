@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>نور ❤️</title>
+<style>
+body{
+  margin:0;
+  padding:0;
+  background:linear-gradient(to bottom,#ffc0cb,#ff69b4);
+  font-family:Arial;
+  text-align:center;
+  color:white;
+  overflow:hidden;
+}
+.container{
+  margin-top:80px;
+  padding:20px;
+}
+h1{
+  font-size:60px;
+  text-shadow:0 0 20px white, 0 0 40px #ff1493;
+}
+p{
+  font-size:20px;
+  max-width:800px;
+  margin:auto;
+  line-height:1.8;
+}
+#counter{
+  margin-top:30px;
+  font-size:22px;
+  font-weight:bold;
+}
+.heart{
+  position:fixed;
+  color:white;
+  animation:float 5s linear infinite;
+}
+@keyframes float{
+  from{transform:translateY(100vh);}
+  to{transform:translateY(-10vh);}
+}
+</style>
+</head>
+<body>
+
+<!-- أغنية Ocean Eyes شغالة تلقائي -->
+<iframe width="0" height="0" src="https://www.youtube.com/embed/8Y6s6UJV6lo?autoplay=1&loop=1&playlist=8Y6s6UJV6lo" frameborder="0" allow="autoplay"></iframe>
+
+<div class="container">
+<h1>نور ✨</h1>
+
+<p>
+من أول ما دخلتي حياتي… وإنتِ بقيتي المعنى الحقيقي لاسمك.  
+نور فعلاً… نور في ضحكتي، في يومي، في قلبي.  
+
+٣ سنين يمكن تعدي على ناس عادي،  
+بس معاكِ كانت أجمل ٣ سنين في عمري كله.  
+كل لحظة بينا كانت بتأكدلي إن قلبي اختارك صح.  
+
+إنتِ مش مجرد حب…  
+إنتِ طمأنينة، أمان، وسبب إني أبتسم حتى وأنا زعلان.  
+
+لو الدنيا كلها اتغيرت،  
+في حاجة واحدة مستحيل تتغير…  
+إني بحبك، وهفضل أحبك،  
+حب أكبر من الكلام وأعمق من أي وصف. ❤️
+</p>
+
+<div id="counter"></div>
+
+</div>
+
+<script>
+var startDate = new Date("2023-02-14T00:00:00");
+
+function updateCounter(){
+  var now = new Date();
+  var diff = now - startDate;
+
+  var seconds = Math.floor(diff/1000);
+  var minutes = Math.floor(seconds/60);
+  var hours = Math.floor(minutes/60);
+  var days = Math.floor(hours/24);
+  var months = Math.floor(days/30);
+  var years = Math.floor(months/12);
+
+  document.getElementById("counter").innerHTML =
+  "عدّاد حبنا: " + years + " سنة 💖 " +
+  (months%12) + " شهر 💕 " +
+  (days%30) + " يوم 🌸 " +
+  (hours%24) + " ساعة ⏳ ";
+}
+
+setInterval(updateCounter,1000);
+
+function createHeart(){
+  var heart=document.createElement("div");
+  heart.className="heart";
+  heart.innerHTML="❤";
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.fontSize=Math.random()*20+15+"px";
+  document.body.appendChild(heart);
+  setTimeout(()=>heart.remove(),5000);
+}
+setInterval(createHeart,500);
+</script>
+
+</body>
+</html>
